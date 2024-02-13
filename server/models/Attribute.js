@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const dataSchema = new mongoose.Schema({}, { collection: "Cart", timestamps: true, strict: false });
+const dataSchema = new mongoose.Schema({}, { collection: "Attribute", timestamps: true, strict: false });
 
 dataSchema.set('toJSON', {
     virtuals: true,
@@ -11,6 +11,7 @@ dataSchema.set('toJSON', {
     }
 });
 
-const Cart = mongoose.model('Cart', dataSchema);
+const Attribute = mongoose.model('Attribute', dataSchema);
 
-module.exports = Cart;
+module.exports = Attribute;
+
