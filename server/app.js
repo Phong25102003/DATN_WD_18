@@ -45,37 +45,41 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'http://127.0.0.1:5501',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const coursesController = require("./controllers/course");
-const routerCate = require("./controllers/categories");
-const routerGoogleAccounts = require("./controllers/googleAccount");
-const routerPayments = require("./controllers/payment");
-const routerPosts = require("./controllers/posts");
-const routerReviews = require("./controllers/review");
-const routerUserProgress = require("./controllers/userProgress");
-const routerVideoProgress = require("./controllers/userVideoProgress");
-const routerVideo = require("./controllers/video");
-const routerNotes = require("./controllers/note");
-const routerQuestions = require("./controllers/questions");
-const routerCoupon = require("./controllers/coupon");
+const Attribute = require("./controllers/Attribute");
+const Cart = require("./controllers/Cart");
+const Category = require("./controllers/Category");
+const Color = require("./controllers/Color");
+const Galery = require("./controllers/Galery");
+const Order_Item = require("./controllers/Order_item");
+const Order = require("./controllers/Order");
+const Product_Incoming = require("./controllers/Product_incoming");
+const Product = require("./controllers/Product");
+const Return_Request = require("./controllers/Return_request");
+const Review = require("./controllers/Review");
+const Role = require("./controllers/Role");
+const Size = require("./controllers/Size");
+const User = require("./controllers/User");
 
-app.use("/Courses", coursesController);
-app.use("/Categories", routerCate);
-app.use("/googleAccount", routerGoogleAccounts);
-app.use("/Payment", routerPayments);
-app.use("/posts", routerPosts);
-app.use("/Reviews", routerReviews);
-app.use("/UserProgress", routerUserProgress);
-app.use("/userVideoProgress", routerVideoProgress);
-app.use("/Videos", routerVideo);
-app.use("/Notes", routerNotes);
-app.use("/Questions", routerQuestions);
-app.use("/Coupons", routerCoupon);
+app.use("/Attribute", Attribute);
+app.use("/Cart", Cart);
+app.use("/Category", Category);
+app.use("/Color", Color);
+app.use("/Galery", Galery);
+app.use("/Order_Item",  Order_Item);
+app.use("/Order", Order);
+app.use("/Product_Incoming", Product_Incoming);
+app.use("/Product", Product);
+app.use("/Return_Requestes", Return_Request);
+app.use("/Review", Review);
+app.use("/Role", Role);
+app.use("/Size", Size);
+app.use("/User", User);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
