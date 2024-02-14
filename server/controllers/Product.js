@@ -28,6 +28,8 @@ routerProduct.get("/", async (req, res) => {
     }
 });
 
+
+
 // Read by ID
 routerProduct.get("/:id", async (req, res) => {
     try {
