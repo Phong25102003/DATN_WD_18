@@ -1,0 +1,469 @@
+{
+  "cart": [
+    {
+      "email": "maitranthi651@gmail.com",
+      "products": [
+        {
+          "product": {
+            "name": "Kínhsố2",
+            "price": 120,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 2
+          },
+          "quantity": 8
+        },
+        {
+          "product": {
+            "name": "Kínhsố3",
+            "price": 300,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 3
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "name": "kinhmat 1",
+            "price": 250,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4094-copy-1-300x300.jpg",
+            "materialId": "1",
+            "color": "fé",
+            "quantity": "34",
+            "info": "fé",
+            "categoriesId": 1,
+            "id": 1
+          },
+          "quantity": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "email": "taidvph20044@gmail.com",
+      "products": [
+        {
+          "product": {
+            "name": "Kínhsố2",
+            "price": 120,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 2
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "name": "kinhmat 1",
+            "price": 250,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4094-copy-1-300x300.jpg",
+            "materialId": "1",
+            "color": "fé",
+            "quantity": "34",
+            "info": "fé",
+            "categoriesId": 1,
+            "id": 1
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "name": "Kínhsố7",
+            "price": 700,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 7
+          },
+          "quantity": 3
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "test": [
+    {
+      "email": "maitranthi651@gmail.com",
+      "products": [
+        {
+          "product": {
+            "name": "Kínhsố2",
+            "price": 120,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 2
+          },
+          "quantity": 8
+        },
+        {
+          "product": {
+            "name": "Kínhsố3",
+            "price": 300,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 3
+          },
+          "quantity": 2
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "googleAccount": [
+    {
+      "email": "anhnek033@gmail.com",
+      "name": "Xế biết code",
+      "img": "https://lh3.googleusercontent.com/a/AAcHTtdQrW_PX3riN9qotN_24lK0M3ahKnWCxbwjvA8VpfKIyQ=s96-c",
+      "id": 1
+    },
+    {
+      "email": "detaoface2003@gmail.com",
+      "name": "face detao",
+      "img": "https://lh3.googleusercontent.com/a/ACg8ocK7pruupiKh4fo1RZTe7UA3LZaxuVRX_eThMjx7f-4I=s96-c",
+      "id": 2
+    },
+    {
+      "email": "maitranthi651@gmail.com",
+      "name": "Mai Tranthi",
+      "img": "https://lh3.googleusercontent.com/a/ACg8ocJj_ott0VE1bH_RteiS4TZltYyQmbfZtyP7A3bsdip6=s96-c",
+      "id": 4
+    }
+  ],
+  "hoadon": [
+    {
+      "name": "Đinh Văn Tài",
+      "email": "bail.com",
+      "phone": "0916523894",
+      "city": "Hà Nội",
+      "ward": "Hoàn Kiếm",
+      "address": "Giao Thủy - Nam Định",
+      "paymentMethod": "cash",
+      "cartItems": [
+        {
+          "product": {
+            "name": "Kínhsố7",
+            "price": 700,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 7
+          },
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 2100,
+      "status": "Đã đặt hàng",
+      "id": 1
+    },
+    {
+      "name": "Đinh Văn Tài",
+      "email": "taidvph20044@gmail.com",
+      "phone": "0916523894",
+      "city": "Hà Nội",
+      "ward": "Hoàn Kiếm",
+      "address": "Giao Thủy - Nam Định",
+      "paymentMethod": "cash",
+      "cartItems": [
+        {
+          "product": {
+            "name": "kinhmat 1",
+            "price": 250,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4094-copy-1-300x300.jpg",
+            "categoriesId": 1,
+            "color": "fé",
+            "quantity": "34",
+            "info": "fé",
+            "id": 1
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "name": "Kínhsố7",
+            "price": 700,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 7
+          },
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 2350,
+      "status": "Đã đặt hàng",
+      "id": 6
+    },
+    {
+      "name": "Đinh Văn Tài",
+      "email": "taidvph20044@gmail.com",
+      "phone": "0916523894",
+      "city": "Hà Nội",
+      "ward": "Cầu Giấy",
+      "address": "Giao Thủy - Nam Định",
+      "paymentMethod": "cash",
+      "cartItems": [
+        {
+          "product": {
+            "name": "Kínhsố7",
+            "price": 700,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 7
+          },
+          "quantity": 3
+        }
+      ],
+      "totalPrice": 2100,
+      "status": "Đã đặt hàng",
+      "id": 7
+    },
+    {
+      "name": "Đinh Văn Tài",
+      "email": "maitranthi651@gmail.com",
+      "phone": "0916523894",
+      "city": "Hà Nội",
+      "ward": "Hoàn Kiếm",
+      "address": "Giao Thủy - Nam Định",
+      "voucher": "",
+      "date": "",
+      "paymentMethod": "cash",
+      "cartItems": [
+        {
+          "product": {
+            "name": "kinhmat 1",
+            "price": 250,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4094-copy-1-300x300.jpg",
+            "categoriesId": 1,
+            "color": "fé",
+            "quantity": "34",
+            "info": "fé",
+            "id": 1
+          },
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 200,
+      "status": "Đã đặt hàng",
+      "id": 8
+    },
+    {
+      "name": "Đinh Văn Tài",
+      "email": "maitranthi651@gmail.com",
+      "phone": "0916523894",
+      "city": "Hà Nội",
+      "ward": "Hoàn Kiếm",
+      "address": "Giao Thủy - Nam Định",
+      "voucher": "",
+      "date": "2023-11-06",
+      "paymentMethod": "cash",
+      "cartItems": [
+        {
+          "product": {
+            "name": "Kínhsố2",
+            "price": 120,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 2
+          },
+          "quantity": 8
+        },
+        {
+          "product": {
+            "name": "Kínhsố3",
+            "price": 300,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+            "categoriesId": 2,
+            "color": "red",
+            "quantity": "2",
+            "info": "test",
+            "id": 3
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "name": "kinhmat 1",
+            "price": 250,
+            "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4094-copy-1-300x300.jpg",
+            "categoriesId": 1,
+            "color": "fé",
+            "quantity": "34",
+            "info": "fé",
+            "id": 1
+          },
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 1810,
+      "status": "Đã đặt hàng",
+      "id": 9
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Anna"
+    },
+    {
+      "id": 2,
+      "name": "Anna2"
+    }
+  ],
+  "products": [
+    {
+      "name": "kinhmat 1",
+      "price": 250,
+      "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4094-copy-1-300x300.jpg",
+      "materialId": "1",
+      "color": "fé",
+      "quantity": "34",
+      "info": "fé",
+      "categoriesId": 1,
+      "id": 1
+    },
+    {
+      "name": "Kínhsố2",
+      "price": 120,
+      "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+      "categoriesId": 2,
+      "color": "red",
+      "quantity": "2",
+      "info": "test",
+      "id": 2
+    },
+    {
+      "name": "Kínhsố3",
+      "price": 300,
+      "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+      "categoriesId": 2,
+      "color": "red",
+      "quantity": "2",
+      "info": "test",
+      "id": 3
+    },
+    {
+      "name": "Kínhsố4",
+      "price": 400,
+      "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+      "categoriesId": 2,
+      "color": "red",
+      "quantity": "2",
+      "info": "test",
+      "id": 4
+    },
+    {
+      "name": "Kínhsố5",
+      "price": 500,
+      "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+      "categoriesId": 2,
+      "color": "red",
+      "quantity": "2",
+      "info": "test",
+      "id": 5
+    },
+    {
+      "name": "Kínhsố6",
+      "price": 600,
+      "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+      "categoriesId": 2,
+      "color": "red",
+      "quantity": "2",
+      "info": "test",
+      "id": 6
+    },
+    {
+      "name": "Kínhsố7",
+      "price": 700,
+      "img": "https://kinhmatanna.com/wp-content/uploads/2023/06/DSC_4017-1-300x300.jpg",
+      "categoriesId": 2,
+      "color": "red",
+      "quantity": "2",
+      "info": "test",
+      "id": 7
+    }
+  ],
+  "Reviews": [
+    {
+      "bookId": 5,
+      "email": "taidvph20044@gmail.com",
+      "name": "Tài Đinh Văn",
+      "img": "https://lh3.googleusercontent.com/a/ACg8ocKJJ1paGWKCnHOGm3j3pONTOmT0LBwy4In8h06aQDkF=s96-c",
+      "rating": 4,
+      "comment": "dưadưadưa",
+      "id": 1
+    },
+    {
+      "bookId": 2,
+      "email": "taidvph20044@gmail.com",
+      "name": "Tài Đinh Văn",
+      "img": "https://lh3.googleusercontent.com/a/ACg8ocKJJ1paGWKCnHOGm3j3pONTOmT0LBwy4In8h06aQDkF=s96-c",
+      "rating": 3,
+      "comment": "FÉ",
+      "id": 2
+    },
+    {
+      "bookId": 3,
+      "email": "taidvph20044@gmail.com",
+      "name": "Tài Đinh Văn",
+      "img": "https://lh3.googleusercontent.com/a/ACg8ocKJJ1paGWKCnHOGm3j3pONTOmT0LBwy4In8h06aQDkF=s96-c",
+      "rating": 2,
+      "comment": "bìa hơi mềm ạ",
+      "id": 3
+    },
+    {
+      "bookId": 3,
+      "email": "maitranthi651@gmail.com",
+      "name": "Mai Tranthi",
+      "img": "https://lh3.googleusercontent.com/a/ACg8ocJj_ott0VE1bH_RteiS4TZltYyQmbfZtyP7A3bsdip6=s96-c",
+      "rating": 5,
+      "comment": "Sách bảo quản tốt",
+      "id": 4
+    },
+    {
+      "bookId": 1,
+      "email": "taidvph20044@gmail.com",
+      "name": "Tài Đinh Văn",
+      "img": "https://lh3.googleusercontent.com/a/ACg8ocKJJ1paGWKCnHOGm3j3pONTOmT0LBwy4In8h06aQDkF=s96-c",
+      "rating": 2,
+      "comment": "gdzvzd",
+      "id": 5
+    },
+    {
+      "bookId": 6,
+      "email": "maitranthi651@gmail.com",
+      "name": "Mai Tranthi",
+      "img": "https://lh3.googleusercontent.com/a/ACg8ocJj_ott0VE1bH_RteiS4TZltYyQmbfZtyP7A3bsdip6=s96-c",
+      "rating": 3,
+      "comment": "rrr",
+      "id": 6
+    }
+  ]
+}
