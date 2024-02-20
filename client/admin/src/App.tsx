@@ -7,5 +7,8 @@ function App() {
   
   return (<></>)
 }
+<Router>
+<Route path="admin/donhang" element={<Listdonhang />} />
+</Router>
 
 export default App;
