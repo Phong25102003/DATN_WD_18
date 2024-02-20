@@ -7,7 +7,7 @@
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>kingshoes Sneaker</title>
+    <title>Male-Fashion | Template</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
@@ -35,7 +35,7 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
-                <a href="#">Sign in</a>
+                <a href="login.html">Sign in</a>
                 <a href="#">FAQs</a>
             </div>
             <div class="offcanvas__top__hover">
@@ -73,10 +73,9 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="http://localhost:5173/admin">Đăng nhập</a>
+                                <a href="http://127.0.0.1:5501/client/login.html">Đăng nhập</a>
                                 <a href="#">FAQs</a>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -273,7 +272,8 @@
                                 document.write(new Date().getFullYear());
                             </script>2024
                             All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Nguyễn Văn Phong</a>
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Đinh Văn
+                                Tài</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
@@ -288,12 +288,50 @@
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch">+</div>
             <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
+                <input type="text" id="search-input" placeholder="Search heere....." oninput="searchProducts()">
             </form>
         </div>
+        <div id="search-results"></div>
     </div>
+    
     <!-- Search End -->
-
+    <script>
+        function searchProducts() {
+            const searchQuery = document.getElementById('search-input').value.trim();
+            const searchResultsContainer = document.getElementById('search-results');
+    
+            if (searchQuery === '') {
+                searchResultsContainer.innerHTML = '';
+                return;
+            }
+    
+            searchResultsContainer.innerHTML = 'Loading...';
+    
+            fetch(`http://localhost:3000/product`)
+                .then(response => response.json())
+                .then(data => {
+                    searchResultsContainer.innerHTML = '';
+    
+                    const filteredProducts = data.filter(product => product.name === searchQuery);
+    
+                    if (filteredProducts.length > 0) {
+                        const ul = document.createElement('ul');
+                        filteredProducts.forEach(product => {
+                            const li = document.createElement('li');
+                            li.textContent = product.name;
+                            ul.appendChild(li);
+                        });
+                        searchResultsContainer.appendChild(ul);
+                    } else {
+                        searchResultsContainer.textContent = 'No products found.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error searching products:', error);
+                    searchResultsContainer.textContent = 'Error searching products.';
+                });
+        }
+    </script>
     <!-- Js Plugins -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
