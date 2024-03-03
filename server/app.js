@@ -11,17 +11,16 @@ const router = express.Router();
 const fileUpload = require('express-fileupload');
 const nodemailer = require('nodemailer');
 
-// Kết nối mongoDb
-const mongoDBUrl = "mongodb+srv://Graduation:123@cluster0.nzrddg9.mongodb.net/Sp_Project";
-
-// Kết nối cloudDinary
+const mongoDBUrl = "mongodb+srv://Graduation:123@cluster0.nzrddg9.mongodb.net/LinkedIn_Learning";
 const cloudinary = require('cloudinary').v2;
+
 cloudinary.config({
     cloud_name: 'dsk9jrxzf',
     api_key: '612129235538518',
     api_secret: 'FZkzoeuEcvkqDZmbiqrpmoKSEVA',
 
 });
+
 cloudinary.uploader.upload("https://s120-ava-talk.zadn.vn/f/1/7/8/139/120/c5debf8a117bcbf7a86ed9ab75f1dc10.jpg",
     { public_id: "olympic_flag" },
     function (error, result) {
@@ -32,9 +31,9 @@ cloudinary.uploader.upload("https://s120-ava-talk.zadn.vn/f/1/7/8/139/120/c5debf
         }
     }
 );
+
 mongoose.connect(mongoDBUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
-
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
@@ -45,45 +44,42 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors({
-    origin: 'http://127.0.0.1:5501',
+    origin: 'http://localhost:5173',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const Attribute = require("./controllers/Attribute");
-const Cart = require("./controllers/Cart");
-const Category = require("./controllers/Category");
-const Color = require("./controllers/Color");
-const Galery = require("./controllers/Galery");
-const Order_Item = require("./controllers/Order_item");
-const Order = require("./controllers/Order");
-const Product_Incoming = require("./controllers/Product_incoming");
-const Product = require("./controllers/Product");
-const Return_Request = require("./controllers/Return_request");
-const Review = require("./controllers/Review");
-const Role = require("./controllers/Role");
-const Size = require("./controllers/Size");
-const User = require("./controllers/User");
+const coursesController = require("./controllers/course");
+const routerCate = require("./controllers/categories");
+const routerGoogleAccounts = require("./controllers/googleAccount");
+const routerPayments = require("./controllers/payment");
+const routerPosts = require("./controllers/posts");
+const routerReviews = require("./controllers/review");
+const routerUserProgress = require("./controllers/userProgress");
+const routerVideoProgress = require("./controllers/userVideoProgress");
+const routerVideo = require("./controllers/video");
+const routerNotes = require("./controllers/note");
+const routerQuestions = require("./controllers/questions");
+const routerCoupon = require("./controllers/coupon");
 
-app.use("/Attribute", Attribute);
-app.use("/Cart", Cart);
-app.use("/Category", Category);
-app.use("/Color", Color);
-app.use("/Galery", Galery);
-app.use("/Order_Item",  Order_Item);
-app.use("/Order", Order);
-app.use("/Product_Incoming", Product_Incoming);
-app.use("/Product", Product);
-app.use("/Return_Requestes", Return_Request);
-app.use("/Review", Review);
-app.use("/Role", Role);
-app.use("/Size", Size);
-app.use("/User", User);
+app.use("/Courses", coursesController);
+app.use("/Categories", routerCate);
+app.use("/googleAccount", routerGoogleAccounts);
+app.use("/Payment", routerPayments);
+app.use("/posts", routerPosts);
+app.use("/Reviews", routerReviews);
+app.use("/UserProgress", routerUserProgress);
+app.use("/userVideoProgress", routerVideoProgress);
+app.use("/Videos", routerVideo);
+app.use("/Notes", routerNotes);
+app.use("/Questions", routerQuestions);
+app.use("/Coupons", routerCoupon);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 // Endpoint để hiển thị form upload
+
 
 app.post('/send-email', (req, res) => {
     const { to, subject, text } = req.body;
@@ -105,15 +101,14 @@ app.post('/send-email', (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-          console.error('Error sending email:', error);
-          res.status(500).send('Internal Server Error');
+            console.error('Error sending email:', error);
+            res.status(500).send('Internal Server Error');
         } else {
-          console.log('Email sent:', info.response);
-          res.status(200).send('Email sent successfully');
+            console.log('Email sent:', info.response);
+            res.status(200).send('Email sent successfully');
         }
-      });
+    });
 });
-
 // Route chính
 app.get('/', (req, res) => {
     res.send('Hello World!');
@@ -215,19 +210,21 @@ app.post('/create_payment_url', function (req, res, next) {
 
 
 app.post('/saveOrder', (req, res) => {
-    const { amount } = req.body;
-    const { id } = req.body;
-    const { userID } = req.body;
+    const { amount, userId, items } = req.body;
 
-    const amountData = `${amount}\n`;
-    const idData = `${id}\n`;
-    const userIdData = `${userID}\n`;
+    // Save total amount to a file (overwrite existing content)
+    fs.writeFileSync('amount.txt', `${amount}\n`, { flag: 'w' });
 
-    fs.writeFileSync('amount.txt', amountData);  // Ghi đè nội dung file, chỉ giữ lại amount cuối cùng
-    fs.writeFileSync('user.txt', userIdData);
-    fs.writeFileSync('course.txt', idData);
+    // Save user ID to a file (overwrite existing content)
+    fs.writeFileSync('userId.txt', `${userId}\n`, { flag: 'w' });
+
+    // Save items to a JSON file (overwrite existing content)
+    fs.writeFileSync('items.json', JSON.stringify(items, null, 2), { flag: 'w' });
+
     res.sendStatus(200);
 });
+
+
 
 app.get('/order/vnpay_return', vnpayReturnHandler);
 
@@ -257,31 +254,18 @@ async function vnpayReturnHandler(req, res, next) {
 
         if (secureHash === signed) {
             const responseCode = vnp_Params['vnp_ResponseCode'];
-            // if (responseCode === '00') {
-            //     const orderIdFilePath = 'order.txt';
-            //     const orderId = fs.readFileSync(orderIdFilePath, 'utf-8').trim();
 
-            //     try {
-            //         if (responseCode) {
-            //             res.render('success', { code: responseCode });
-            //         } else {
-            //             res.render('success', { code: '97' });
-            //         }
-            //     } catch (error) {
-            //         res.render('success', { code: '97' });
-            //     }
-            // } else {
-            //     res.render('success', { code: responseCode });
-            // }
             if (responseCode === '00') {
-                const courseIdFilePath = 'course.txt';
-                const userIdFilePath = 'user.txt';
-                const amountFilePath = 'amount.txt'
 
-                // Đọc dữ liệu từ file và chuyển đổi thành số
-                const courseId = fs.readFileSync(courseIdFilePath, 'utf-8').trim();
+                const userIdFilePath = 'userId.txt';
+                const amountFilePath = 'amount.txt';
+                const itemsFilePath = 'items.json';
+
+                // Read data from files
+
                 const userId = fs.readFileSync(userIdFilePath, 'utf-8').trim();
                 const rawAmount = fs.readFileSync(amountFilePath, 'utf-8').trim();
+                const rawItems = fs.readFileSync(itemsFilePath, 'utf-8').trim();
 
                 // Chuyển đổi giá trị amount thành số
                 const numericAmount = parseFloat(rawAmount.replace(/[^0-9.-]+/g, '')) || 0;
@@ -294,13 +278,26 @@ async function vnpayReturnHandler(req, res, next) {
                         },
                         body: JSON.stringify({
                             paymentStatus: true,
-                            courseId: courseId,
                             userId: userId,
-                            amount: numericAmount
+                            amount: numericAmount,
+                            status: "Đơn hàng chờ xác nhận",
+                            status2: "Đã thanh toán",
+                            option: "Chuyển khoản",
+                            items: rawItems
                         }),
                     });
 
                     if (updateResponse) {
+                        // Gửi yêu cầu để xóa giỏ hàng
+                        const deleteCartResponse = await fetch(`http://localhost:3000/notes?userID=${userId}`, {
+                            method: 'DELETE',
+                        });
+
+                        if (deleteCartResponse.ok) {
+                            res.render('success', { code: responseCode });
+                        } else {
+                            res.render('success', { code: '97' });
+                        }
                         res.render('success', { code: responseCode });
                     } else {
                         res.render('success', { code: '97' });
