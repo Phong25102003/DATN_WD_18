@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router';
 import { firebaseConfig } from '@/components/GetAuth/firebaseConfig';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { setCookie } from '../../../components/Cookie/cookieUtils';
-import Cookies from 'js-cookie';
+import Cookies from 'js-cookie';//
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
