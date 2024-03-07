@@ -23,7 +23,7 @@ const CartPage = () => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            setEmail(currentUser?.email);
+            setEmail(currentUser?.email);//
             setLoading(false);
         });
         return () => {
@@ -90,7 +90,7 @@ const CartPage = () => {
                     status2: "Chưa thanh toán",
                     option: "Tiền mặt",
                     items: aggregatedCartItems.map(item => ({
-                        productId: item.productId,
+                        productId: item.productId,//
                         size: item.size,
                         color: item.color,
                         quantity: item.quantity
