@@ -7,7 +7,7 @@ import { sendEmailVerification } from 'firebase/auth';
 import { sendPasswordResetEmail } from 'firebase/auth';
 
 const SigninPage = () => {
-    const auth = getAuth(); //
+    const auth = getAuth();
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
