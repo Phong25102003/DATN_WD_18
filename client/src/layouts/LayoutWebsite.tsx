@@ -4,7 +4,10 @@ import FooterUser from "../components/LayoutUser/FooterUser";
 const LayoutWebsite = () => {
     return <div>
         <HeaderUser />
+        <br />
         <Outlet />
+        <br />
+        <br />
         <FooterUser />
     </div>;
 };
