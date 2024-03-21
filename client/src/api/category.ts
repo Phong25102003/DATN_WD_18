@@ -14,7 +14,7 @@ const categoryApi = createApi({
     }),
     endpoints: (builder) => ({
         getCategorys: builder.query<any[], void>({
-            query: () => `/Categories`,
+            query: () => `/Categories`, 
             providesTags: ['Categories'],
             transformResponse: (response: any) => {
                 const reversedResponse = response.reverse();
