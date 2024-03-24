@@ -29,9 +29,6 @@ import AdminCategory from "./pages/admin/categories";
 import AdminCategoryAdd from "./pages/admin/categories/add";
 import ErrorPage from "./pages/404/404page";
 import AdminCategoryEdit from "./pages/admin/categories/edit";
-import AdminVideo from "./pages/admin/videos";
-import AdminVideoAdd from "./pages/admin/videos/add";
-import AdminVideoEdit from "./pages/admin/videos/edit";
 import { ContactUs } from "./pages/user/SendEmail/sendEmail";
 import Certificate from "./pages/user/Certificate/Certificate";
 import Dashboard from "./pages/admin/dashboard/dashboard";
@@ -57,7 +54,6 @@ import Quiz from "./pages/admin/quizmanager/quiz";
 import { getCookie } from "./components/Cookie/cookieUtils";
 import Uploadtest from "./pages/404/Uploadtest";
 import Quizfor from "./pages/user/QuizPage/quiz";
-import AdminVideoAddINcourse from "./pages/admin/videos/addincourse";
 import CouponManagement from "./pages/admin/coupons/Coupons";
 import EmailButton from "./pages/user/IntroductionPage/sendemailtest";
 import CartPage from "./pages/user/CartPage/CartPage";
@@ -87,9 +83,6 @@ const AdminProductAddWithAuthorization = withAuthorization([1], AdminProductAdd)
 const AdminCategoryWithAuthorization = withAuthorization([1], AdminCategory);
 const AdminCategoryAddWithAuthorization = withAuthorization([1], AdminCategoryAdd);
 const AdminCategoryEditWithAuthorization = withAuthorization([1], AdminCategoryEdit);
-const AdminVideoWithAuthorization = withAuthorization([1], AdminVideo);
-const AdminVideoAddWithAuthorization = withAuthorization([1], AdminVideoAdd);
-const AdminVideoEditWithAuthorization = withAuthorization([1], AdminVideoEdit);
 const AdminUserWithAuthorization = withAuthorization([1], AdminUser);
 const AdminUserAddWithAuthorization = withAuthorization([1], AdminUserAdd);
 const AdminUserEditWithAuthorization = withAuthorization([1], AdminUserEdit);
@@ -187,10 +180,6 @@ export const routers = createBrowserRouter([
             { path: "categorys", element: <AdminCategoryWithAuthorization /> },
             { path: "category/add", element: <AdminCategoryAddWithAuthorization /> },
             { path: "category/:idCategory/edit", element: <AdminCategoryEditWithAuthorization /> },
-            { path: "videos", element: <AdminVideoWithAuthorization /> },
-            { path: "video/add", element: <AdminVideoAddWithAuthorization /> },
-            { path: "video/add/:id", element: <AdminVideoAddINcourse /> },
-            { path: "video/:idVideo/edit", element: <AdminVideoEditWithAuthorization /> },
             { path: "users", element: <AdminUserWithAuthorization /> },
             { path: "user/add", element: <AdminUserAddWithAuthorization /> },
             { path: "user/:idUser/edit", element: <AdminUserEditWithAuthorization /> },

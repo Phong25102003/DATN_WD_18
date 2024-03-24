@@ -161,7 +161,7 @@ const CouponManagement = () => {
 
   return (
     <div>
-      <Button className='mb-4' type="default" onClick={() => { setEditingCoupon(null); setModalVisible(true); }}>
+      <Button className='mb-4' type="primary" danger onClick={() => { setEditingCoupon(null); setModalVisible(true); }}>
         Thêm Coupon
       </Button>
 
@@ -173,7 +173,7 @@ const CouponManagement = () => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <Form form={form} layout="vertical">
+        <Form  form={form} layout="vertical" >
           <Form.Item name="code" label="Mã Coupon" rules={[{ required: true, message: 'Nhập mã coupon!' }]}>
             <Input />
           </Form.Item>

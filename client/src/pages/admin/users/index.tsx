@@ -48,6 +48,20 @@ const AdminUser = () => {
         fetchData();
     }, []);
 
+    const deleteUser = (userId: string) => {
+        axios
+            .delete(`http://localhost:3000/googleAccount/${userId}`)
+            .then(() => {
+                const updatedUsersData = usersData.filter((user) => user.id !== userId);
+                setUsersData(updatedUsersData);
+                messageApi.success('Xóa người dùng thành công');
+            })
+            .catch((error) => {
+                console.error('Lỗi xóa người dùng: ', error);
+                messageApi.error('Có lỗi xảy ra khi xóa người dùng');
+            });
+    };
+
     const columns = [
         {
             title: 'Tên người dùng',
@@ -69,17 +83,23 @@ const AdminUser = () => {
             ),
         },
         {
-            title: 'Email',
-            dataIndex: 'email',
-            key: 'email',
-        },
-        {
             title: 'Vai trò',
             dataIndex: 'role',
             key: 'role',
             render: (role) => {
                 return role === 1 ? 'Admin' : 'Người dùng';
             },
+        },
+        {
+            title: 'Thông tin người dùng',
+            render: (_, record) => (
+                <span>
+                    Tên: {record.displayName}<br />
+                    Email: {record.email}<br />
+                    Địa chỉ: {record.address}<br />
+                    Số điện thoại: {record.phone}
+                </span>
+            ),
         },
         {
             title: 'Trạng thái',
@@ -103,8 +123,14 @@ const AdminUser = () => {
                                         {lock ? 'Mở khóa' : 'Khóa'}
                                     </Button>
                                 </Popconfirm>
-                                <Button className='ml-3 bg-success text-white' onClick={() => transferUserRole(record.id, 1)}>Chuyển Admin</Button>
+                                <Button className='ml-3 bg-success text-white' onClick={() => transferUserRole(record.id, )}>Chuyển Admin</Button>
                                 <Button className='ml-3 bg-success text-white' onClick={() => transferUserRole1(record.id, 0)}>Chuyển Người dùng</Button>
+                                <Popconfirm
+                                    title="Bạn có chắc muốn xóa người dùng này không?"
+                                    onConfirm={() => deleteUser(record.id)}
+                                >
+                                    <Button className='ml-3 bg-dange'>Xóa</Button>
+                                </Popconfirm>
                             </>
                         )}
                     </>
