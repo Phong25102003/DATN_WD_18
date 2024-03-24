@@ -106,7 +106,7 @@ const LayoutAdmin = () => {
                         {
                             key: "9",
                             icon: <BankOutlined />,
-                            label: <Link to="/admin/payment">Lịch sử thanh toán</Link>,
+                            label: <Link to="/admin/payment">Quản lý đơn hàng</Link>,
                         },
                         {
                             key: "10",
