@@ -357,7 +357,7 @@ const CartPage = () => {
                         <br />
                         <Radio.Group onChange={handleAddressOptionChange} value={addressOption}>
                             <Radio value="default">Địa chỉ mặc định</Radio>
-                            <Radio value="custom">Nhập địa chỉ mới</Radio>
+                            <Radio value="custom">Nhập địa chỉ </Radio>
                         </Radio.Group>
                         {addressOption === 'custom' && (
                             <div>

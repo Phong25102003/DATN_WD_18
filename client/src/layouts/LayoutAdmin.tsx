@@ -84,11 +84,6 @@ const LayoutAdmin = () => {
                             label: <Link to="/admin/coupon">Quản lý mã giảm giá</Link>,
                         },
                         {
-                            key: "5",
-                            icon: <AiOutlineVideoCamera />,
-                            label: <Link to="/admin/videos">Đang phát triển</Link>,
-                        },
-                        {
                             key: "6",
                             icon: <AiOutlineUser />,
                             label: <Link to="/admin/users">Quản lý người dùng</Link>,
