@@ -1,14 +1,13 @@
 import { useGetCategorysQuery } from "@/api/category";
 import {
-    useAddProductMutation,
     useGetProductByIdQuery,
     useUpdateProductMutation,
 } from "@/api/courses";
 import { Icategory } from "@/interfaces/category";
-import { Button, DatePicker, Form, Input, Select, message } from "antd";
+import { Button, Form, Input, Select, message } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineLoading } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDropzone } from "react-dropzone";
@@ -26,23 +25,23 @@ const AdminProductEdit = () => {
         idProduct || ""
     );
     const [updateProduct, { isLoading: isUpdateLoading }] = useUpdateProductMutation();
+    const [uploadingImage, setUploadingImage] = useState(false);
 
     useEffect(() => {
         form.setFieldsValue(productData);
     }, [productData]);
 
-    const onFinish = (values: any) => {
-        updateProduct({ ...values, id: idProduct })
-            .unwrap()
-            .then(() => {
-                messageApi.open({
-                    type: "success",
-                    content: "Bạn đã cập nhật sản phẩm thành công. Chờ 3s để quay về quản trị",
-                });
-                setTimeout(() => {
-                    navigate("/admin/product");
-                }, 3000);
-            });
+    const onFinish = async (values: any) => {
+        try {
+            await updateProduct({ ...values, id: idProduct });
+            messageApi.success("Bạn đã cập nhật sản phẩm thành công. Chờ 3s để quay về quản trị");
+            setTimeout(() => {
+                navigate("/admin/product");
+            }, 3000);
+        } catch (error) {
+            console.error("Error updating product:", error);
+            messageApi.error("Có lỗi xảy ra khi cập nhật sản phẩm. Vui lòng thử lại sau.");
+        }
     };
 
     const onFinishFailed = (errorInfo: any) => {
@@ -58,6 +57,7 @@ const AdminProductEdit = () => {
 
     const onDrop = async (acceptedFiles: any) => {
         try {
+            setUploadingImage(true);
             const formData = new FormData();
             formData.append("file", acceptedFiles[0]);
             formData.append("upload_preset", "your_cloudinary_upload_preset");
@@ -71,6 +71,9 @@ const AdminProductEdit = () => {
             form.setFieldsValue({ courseIMG: imageUrl });
         } catch (error) {
             console.error("Error uploading image to Cloudinary:", error);
+            messageApi.error("Có lỗi xảy ra khi tải ảnh lên. Vui lòng thử lại sau.");
+        } finally {
+            setUploadingImage(false);
         }
     };
 

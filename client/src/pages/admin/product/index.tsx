@@ -207,7 +207,7 @@ const AdminProduct = () => {
                 setProductsData(updatedProductsData);
             })
             .catch((error) => {
-                console.error('Lỗi khi cập nhật trạng thái ẩn/mở khóa học: ', error);
+                console.error('Lỗi khi cập nhật trạng thái ẩn/mở sản phẩm: ', error);
             });
     };
 
@@ -215,8 +215,6 @@ const AdminProduct = () => {
         window.open(`http://localhost:5173/admin/video/${videoId}/edit`, '_blank');
     };
 
-
-    /////////////////////////////////////////////////////////////////
 
 
     const [deleteVideoId, setDeleteVideoId] = useState(null);
