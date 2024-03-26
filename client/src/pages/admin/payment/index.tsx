@@ -140,7 +140,9 @@ const AdminPayment = (props: any) => {
                             if (order.userId === userId) {
                                 order.address = userData.address;
                                 order.phone = userData.phone;
+                                order.displayName= userData.displayName;
                             }
+                            console.log(order.address);
                             return order;
                         });
                         setOrders(updatedOrders);
@@ -198,6 +200,8 @@ const AdminPayment = (props: any) => {
                                         </select>
                                         <p className='text-sm'>Trạng thái thanh toán: {order.status2}</p>
                                         <p className='text-sm'>Id người dùng: {order.userId}</p>
+                                        {order.displayName && <p className='text-sm'>Tên người đặt hàng: {order.displayName}</p>}
+
                                         {order.address && <p className='text-sm'>Địa chỉ: {order.address}</p>}
                                         {order.phone && <p className='text-sm'>Số điện thoại: {order.phone}</p>}
                                     </div>
