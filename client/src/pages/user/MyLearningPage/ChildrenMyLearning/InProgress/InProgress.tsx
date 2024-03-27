@@ -10,6 +10,8 @@ const auth = getAuth(app);
 const InProgress = () => {
     const [orders, setOrders] = useState([]);
     const [courses, setCourses] = useState({});
+    const [test, setTest] = useState();
+
     const [email, setEmail] = useState<string | null>(null);
     const [user, setUser] = useState<User | null>(null);
     const [userId, setUserID] = useState<string | null>(null);
@@ -70,6 +72,7 @@ const InProgress = () => {
                 });
                 setOrders(filteredOrders);
                 setLoading(false);
+                
             })
             .catch(error => {
                 console.error('Error fetching orders:', error);
@@ -88,6 +91,8 @@ const InProgress = () => {
             .then(data => {
                 // Reverse the order of the courses array
                 data.reverse();
+         
+                setTest(data)
                 const coursesMap = {};
                 data.forEach(course => {
                     coursesMap[course.id] = course;
@@ -129,12 +134,19 @@ const InProgress = () => {
                 console.error('Error updating order status:', error);
                 // Handle errors or display a message to the user if necessary
             });
+            
     };
     return (
         <div className='orders'>
             {orders.length > 0 ? (
                 <ul>
                     {orders.map(order => {
+
+                        
+
+                       
+                   
+
                         // Check if the order status is one of the statuses you want to exclude
                         if (order.status === "Đơn hàng đã được giao thành công" || order.status === "Đơn hàng đã hủy") {
                             // If the status matches, don't render this order
@@ -145,21 +157,34 @@ const InProgress = () => {
                             <li className='ord-map' style={{ width: 700 }} key={order.id}>
                                 <h3 className='text-xs ml-12 mb-3'>Mã đơn hàng: {order.id}</h3>
                                 <ul>
-                                    {order.items.map((item: any, index: any) => (
-                                        <li key={index}>
-                                            <div className='flex pro-cr'>
-                                                {courses[item.productId] && courses[item.productId].courseIMG ? (
-                                                    <img width={120} src={courses[item.productId].courseIMG[0]} alt="" />
-                                                ) : (
-                                                    <div>No image available</div>
-                                                )}
-                                                <div>
-                                                    <p className='font-medium'>{courses[item.productId]?.courseName || 'Unknown Course'}</p>
-                                                    Kích cỡ: {item.size}, Màu sắc: {item.color}, Số lượng: {item.quantity} đôi
+                                    {order.items.map((item: any, index: any) => {
+                                      
+                            
+
+                                        return (
+                                            <li key={index}>
+                                                <div className='flex pro-cr'>
+                                                    {courses[item.productId] && courses[item.productId].courseIMG ? (
+                                                        <img width={120} src={courses[item.productId].courseIMG[0]} alt="" />
+                                                    ) : (
+                                                        <div>No image available</div>
+                                                    )}
+                                                    <div>
+                                                        <p className='font-medium'>{courses[item.productId]?.courseName || 'Unknown Course'}</p>
+                                                        Kích cỡ: {item.size}, Màu sắc: {item.color}, Số lượng: {item.quantity} đôi
+    
+                                                        <div className='flex'> 
+                                                      
+
+                                                        <p>Giá Tiền: <span className='text-red-500 font-medium'>{test?.filter(items1=>items1.id ==item.productId ).map((db2)=>db2.price?.toLocaleString())}đ</span></p>
+                                                        
+                                                        </div>
+                                                  
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    ))}
+                                            </li>
+                                        )
+                                    })}
 
                                 </ul>
                                 <div className='ml-12'>
