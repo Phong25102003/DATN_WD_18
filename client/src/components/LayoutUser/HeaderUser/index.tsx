@@ -248,7 +248,7 @@ const HeaderUser: React.FC = () => {
                                     <div className='thea dropdown dropdown-bottom'>
                                         <label tabIndex={0} className="dropdown"><i className="fa-regular fa-user lups tutut"></i>   </label>
                                         <label className="">
-                                            <div tabIndex={0} className="cursor-pointer mt-1">
+                                            <div  tabIndex={0} className="cursor-pointer  mt-1">
                                                 Tôi <i tabIndex={0} className={'fa-solid fa-caret-down'}></i>
                                             </div>
                                         </label>
