@@ -343,6 +343,7 @@ const HeaderUser: React.FC = () => {
                 <div className="containerCss">
                     <div> Tìm kiếm theo: </div>
                     <ul>
+                        <li><a href="https://www.facebook.com/phonglun.033/">Liên hệ</a></li>
                         <li><a href="">Nike</a></li>
                         <li><a href="">Vans</a></li>
                         <li><a href="">Adidas</a></li>
