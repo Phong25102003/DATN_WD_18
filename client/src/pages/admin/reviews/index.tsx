@@ -63,7 +63,7 @@ const AdminReview = (props: any) => {
             ),
         },
         {
-            title: "Sản phẩm",
+            title: "Tên sản phẩm",
             dataIndex: "courseID",
             key: "courseID",
             render: (courseID: string) => {
@@ -77,7 +77,7 @@ const AdminReview = (props: any) => {
             key: "courseID",
             render: (courseID: string, record: any) => (
                 <>
-                    <img src={record.productImage} alt="Product" style={{ width: '50px', height: 'auto', marginRight: '10px' }} />
+                    <img src={record.productImage[0]} alt="Product" style={{ width: '50px', height: 'auto', marginRight: '10px' }} />
                     {record.productName}
                 </>
             ),
