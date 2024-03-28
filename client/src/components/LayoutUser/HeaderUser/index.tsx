@@ -343,15 +343,13 @@ const HeaderUser: React.FC = () => {
                 <div className="containerCss">
                     <div> Tìm kiếm theo: </div>
                     <ul>
-                        <li><a href="https://www.facebook.com/phonglun.033/">Liên hệ</a></li>
-                        <li><a href="">Nike</a></li>
-                        <li><a href="">Vans</a></li>
-                        <li><a href="">Adidas</a></li>
-                        <li><a href="">Dior</a></li>
-                        <li><a href="">Jodan</a></li>
-                        <li><a href="">Gucci</a></li>
-                        <li><a href="">Puma</a></li>
-                        <li><a href="">| <span className='mr-3'></span> Buy the shoe</a></li>
+                        <li><a href="http://localhost:5173/listcourse">Nike</a></li>
+                        <li><a href="http://localhost:5173/listcourse">Adidas</a></li>
+                        <li><a href="http://localhost:5173/listcourse">Dior</a></li>
+                        <li><a href="http://localhost:5173/listcourse">Jodan</a></li>
+                        <li><a href="http://localhost:5173/listcourse">Gucci</a></li>
+                        <li><a href="http://localhost:5173/listcourse">Puma</a></li>
+                        <li><a href="https://www.facebook.com/phonglun.033/">| <span className='mr-3'></span> Liên hệ chúng tôi</a></li>
                     </ul>
                 </div>
             </nav>
