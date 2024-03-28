@@ -43,22 +43,22 @@ const Post = () => {
             const formData = new FormData();
             formData.append("file", acceptedFiles[0]);
             formData.append("upload_preset", "your_cloudinary_upload_preset");
-
+    
             const response = await axios.post(
-                "https://api.cloudinary.com/v1_1/dsk9jrxzf/image/upload?upload_preset=movies",
+                "https://api.cloudinary.com/v1_1/dsk9jrxzf/image/upload",
                 formData
             );
-
+    
             const imageUrl = response.data.secure_url;
             console.log("Image uploaded successfully:", imageUrl);
-
+    
             setPostData({ ...postData, image: imageUrl });
             setImagePreviewUrl(imageUrl);
         } catch (error) {
             console.error("Error uploading image to Cloudinary:", error);
-            console.error("Cloudinary response:", error);
         }
     };
+    
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
@@ -253,18 +253,6 @@ const Post = () => {
                                 <Input.TextArea value={postData.content} onChange={(e) => setPostData({ ...postData, content: e.target.value })} />
                             </Form.Item>
 
-                            <Form.Item
-                                label="Hình ảnh"
-                                name="image"
-                            >
-                                <div {...getRootProps()} style={{ border: '1px dashed #d9d9d9', padding: '20px', textAlign: 'center' }}>
-                                    <input {...getInputProps()} />
-                                    <p>Thả hình ảnh vào đây hoặc click để chọn hình</p>
-                                </div>
-                                {imagePreviewUrl && (
-                                    <img src={imagePreviewUrl} alt="Preview" style={{ maxWidth: "100%", maxHeight: "200px" }} />
-                                )}
-                            </Form.Item>
                             <Form.Item>
                                 <Button className="w-96" type="dashed" htmlType="submit">
                                    Đăng 

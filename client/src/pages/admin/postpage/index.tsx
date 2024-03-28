@@ -94,11 +94,6 @@ const AdminPostpage = (props: any) => {
             ),
         },
         {
-            title: "Ảnh bài đăng",
-            dataIndex: "image",
-            key: "image",
-        },
-        {
             title: "Hành động",
             render: ({ key: id }: { key: string }) => (
                 <div className="flex space-x-2">
