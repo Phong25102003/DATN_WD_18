@@ -98,7 +98,7 @@ const ListCourse = () => {
                 </label><br />
                 <label>
                     <b>  Lọc theo giá tiền:</b>  <br /> <br />
-                    <Select style={{ width: 200 }}  value={priceRange} onChange={handlePriceRangeChange}>
+                    <Select style={{ width: 200 }} value={priceRange} onChange={handlePriceRangeChange}>
                         <Option value="all">Tất cả</Option>
                         <Option value="0-500k">Từ 0 đến 500k</Option>
                         <Option value="500k-1m">Từ 500k đến 1 triệu</Option>
@@ -116,7 +116,7 @@ const ListCourse = () => {
                 </label> <br />
                 <label>
                     <b>  Lọc theo bảng màu: </b> <br /> <br />
-                    <Select style={{ width: 120 }} value={selectedColor} onChange={handleColorChange}  dropdownClassName="dropdown-below">
+                    <Select style={{ width: 120 }} value={selectedColor} onChange={handleColorChange} dropdownClassName="dropdown-below">
                         <Option value="all">Tất cả</Option>
                         <Option value="Red">🟥 Đỏ</Option>
                         <Option value="Blue">🟦 Xanh</Option>
@@ -166,9 +166,9 @@ const ListCourse = () => {
                                         </label>
                                         <ul
                                             tabIndex={0}
-                                            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 mt-8"
+                                            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 right-0 mt-8 "
                                         >
-                                            <Button onClick={() => handleBookmarkClick(course.id)}>Thêm giỏ hàng</Button>
+                                            <Button className="text-white" onClick={() => handleBookmarkClick(course.id)}>Thêm giỏ hàng</Button>
                                         </ul>
                                     </div>
                                 </div>

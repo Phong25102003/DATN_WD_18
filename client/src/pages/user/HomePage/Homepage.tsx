@@ -133,7 +133,7 @@ const Homepage: React.FC = () => {
                 <div>
                     <div>
                         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-0">
-                            <h2 className="text-2xl font-bold tracking-tight text-gray-900">Sản phẩm dành cho bạn</h2>
+                            <h2 className="text-2xl font-bold tracking-tight text-white-900">Sản phẩm dành cho bạn</h2>
 
                             <div className="product-slider">
                                 {loading ? (
@@ -151,8 +151,8 @@ const Homepage: React.FC = () => {
                                                         </div>
                                                         <div className="mt-2">
                                                             <div>
-                                                                <h3 className="text-xs text-gray-700">
-                                                                    <span className="absolute inset-2 popular">New</span>
+                                                                <h3 className="text-xs text-white-700">
+                                                                    <span className="absolute inset-2 popular bg-red-500 text-white w-9 p-1">New</span>
                                                                     {product.categoryName}
                                                                 </h3>
                                                                 <a href={`/introduction/${product.id}`} key={index}>
@@ -174,8 +174,8 @@ const Homepage: React.FC = () => {
 
                 <div>
                     <div>
-                        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-0">
-                            <h2 className="text-2xl font-bold tracking-tight text-gray-900">Sản phẩm nổi bật trong tuần</h2>
+                        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-0  ">
+                            <h2 className="mt-20 text-2xl font-bold tracking-tight text-white-900">Sản phẩm nổi bật trong tuần</h2>
 
                             <div className="product-slider">
                                 {loading ? (
@@ -189,16 +189,16 @@ const Homepage: React.FC = () => {
                                                 return (
                                                     <div className="group relative">
                                                         <div className="aspect-h-1 pro product-hp w-full h-full rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80 product-slide">
-                                                            <img  src={product.courseIMG[0]} alt="" />
+                                                            <img src={product.courseIMG[0]} alt="" />
                                                         </div>
                                                         <div className="mt-2">
                                                             <div>
-                                                                <h3 className="text-xs text-gray-700">
-                                                                    <span className="absolute inset-2 popular">New</span>
+                                                                <h3 className="text-xs text-white-700">
+                                                                    <span className="absolute inset-2 popular bg-red-500 text-white w-9 p-1">New</span>
                                                                     {product.categoryName}
                                                                 </h3>
                                                                 <a href={`/introduction/${product.id}`} key={index}>
-                                                                    <p className="mt-1 text-base">{product.courseName.substring(0, 70)}...</p>
+                                                                    <p className="mt-1  text-base ">{product.courseName.substring(0, 70)}...</p>
                                                                 </a>
                                                             </div>
                                                             <p className={`mt-1 ${textColorClass}`}>{formattedPrice}</p>
